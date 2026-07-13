@@ -71,20 +71,22 @@ a { color: inherit; }
 .button { display: inline-flex; padding: .85rem 1.1rem; align-items: center; gap: 1.4rem; border: 1px solid var(--line-strong); border-radius: 100px; background: var(--accent-soft); font-size: .72rem; font-weight: 650; text-decoration: none; transition: color 150ms ease, border-color 150ms ease, background 150ms ease, transform 150ms ease; }
 .button:hover { color: var(--background); border-color: var(--accent); background: var(--accent); transform: translateY(-2px); }
 
-.hero-sticker { --atom-x: 0px; --atom-y: 0px; position: relative; width: min(28vw, 350px); aspect-ratio: 1; justify-self: center; border: 1px solid var(--line-strong); border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(155,166,255,.22), rgba(14,16,24,.82) 48%, rgba(5,6,10,.94)); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 80px rgba(113,123,255,.08); cursor: grab; touch-action: none; transform: translate3d(var(--atom-x), var(--atom-y), 0); user-select: none; will-change: transform; }
-.hero-sticker:hover { border-color: var(--accent); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 90px rgba(113,123,255,.16); }
-.hero-sticker.is-dragging { z-index: 5; cursor: grabbing; }
+.hero-sticker { position: relative; width: min(28vw, 350px); aspect-ratio: 1; justify-self: center; border: 1px solid var(--line-strong); border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(155,166,255,.22), rgba(14,16,24,.82) 48%, rgba(5,6,10,.94)); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 80px rgba(113,123,255,.08); }
 .orbit { position: absolute; border: 1px solid var(--line-strong); border-radius: 50%; }
 .orbit-one { inset: 12%; }
-.orbit-two { inset: 29% -13%; transform: rotate(58deg); }
+.orbit-two { inset: 29% -13%; animation: orbit-spin 12s linear infinite; }
 .orbit-two::after { position: absolute; top: 45%; left: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); content: ""; }
 .sticker-code { position: absolute; top: 40%; left: 50%; color: var(--ink); font-size: clamp(2.8rem, 5.5vw, 5.4rem); font-weight: 250; letter-spacing: -.16em; transform: translate(-53%, -50%); }
-.sticker-label { position: absolute; right: 18%; bottom: 15%; color: var(--muted); font: 550 clamp(.55rem, 1vw, .75rem) ui-monospace, monospace; line-height: 1.25; text-align: right; }
 .spark { position: absolute; color: var(--accent); font-size: 1rem; }
 .spark-one { top: 16%; left: 13%; }
 .spark-two { right: 10%; bottom: 42%; font-size: .6rem; }
 .role-strip { position: absolute; bottom: 0; left: 50%; display: flex; width: min(calc(100% - 2 * var(--side)), var(--max)); padding: 1.1rem 0; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: clamp(.62rem, 1vw, .75rem); font-weight: 550; letter-spacing: .06em; text-transform: uppercase; transform: translateX(-50%); }
 .role-strip i { color: var(--accent); font-size: .55rem; font-style: normal; }
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .section { padding: clamp(5rem, 10vw, 9rem) var(--side); }
 .work { max-width: calc(var(--max) + 2 * var(--side)); margin: 0 auto; }
@@ -167,6 +169,6 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
 }

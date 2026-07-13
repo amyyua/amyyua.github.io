@@ -77,62 +77,6 @@ if (spaceCanvas && spaceContext) {
   });
 }
 
-const atom = document.querySelector('.hero-sticker');
-const atomPosition = { x: 0, y: 0 };
-let atomDrag;
-
-const setAtomPosition = (x, y) => {
-  atomPosition.x = x;
-  atomPosition.y = y;
-  atom?.style.setProperty('--atom-x', `${x}px`);
-  atom?.style.setProperty('--atom-y', `${y}px`);
-};
-
-atom?.addEventListener('pointerdown', (event) => {
-  if (event.button !== 0) return;
-
-  const bounds = atom.getBoundingClientRect();
-  atomDrag = {
-    pointerId: event.pointerId,
-    startX: event.clientX,
-    startY: event.clientY,
-    originX: atomPosition.x,
-    originY: atomPosition.y,
-    baseLeft: bounds.left - atomPosition.x,
-    baseTop: bounds.top - atomPosition.y,
-    width: bounds.width,
-    height: bounds.height,
-  };
-  atom.setPointerCapture(event.pointerId);
-  atom.classList.add('is-dragging');
-});
-
-atom?.addEventListener('pointermove', (event) => {
-  if (!atomDrag || event.pointerId !== atomDrag.pointerId) return;
-
-  const padding = 12;
-  const nextX = atomDrag.originX + event.clientX - atomDrag.startX;
-  const nextY = atomDrag.originY + event.clientY - atomDrag.startY;
-  const minX = padding - atomDrag.baseLeft;
-  const maxX = window.innerWidth - padding - atomDrag.baseLeft - atomDrag.width;
-  const minY = padding - atomDrag.baseTop;
-  const maxY = window.innerHeight - padding - atomDrag.baseTop - atomDrag.height;
-  setAtomPosition(
-    Math.min(Math.max(nextX, minX), maxX),
-    Math.min(Math.max(nextY, minY), maxY)
-  );
-});
-
-const finishAtomDrag = (event) => {
-  if (!atomDrag || event.pointerId !== atomDrag.pointerId) return;
-  atom.classList.remove('is-dragging');
-  atomDrag = undefined;
-};
-
-atom?.addEventListener('pointerup', finishAtomDrag);
-atom?.addEventListener('pointercancel', finishAtomDrag);
-atom?.addEventListener('dblclick', () => setAtomPosition(0, 0));
-
 const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
