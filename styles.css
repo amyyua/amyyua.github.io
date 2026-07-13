@@ -71,7 +71,9 @@ a { color: inherit; }
 .button { display: inline-flex; padding: .85rem 1.1rem; align-items: center; gap: 1.4rem; border: 1px solid var(--line-strong); border-radius: 100px; background: var(--accent-soft); font-size: .72rem; font-weight: 650; text-decoration: none; transition: color 150ms ease, border-color 150ms ease, background 150ms ease, transform 150ms ease; }
 .button:hover { color: var(--background); border-color: var(--accent); background: var(--accent); transform: translateY(-2px); }
 
-.hero-sticker { position: relative; width: min(28vw, 350px); aspect-ratio: 1; justify-self: center; border: 1px solid var(--line-strong); border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(155,166,255,.22), rgba(14,16,24,.82) 48%, rgba(5,6,10,.94)); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 80px rgba(113,123,255,.08); }
+.hero-sticker { --atom-x: 0px; --atom-y: 0px; position: relative; width: min(28vw, 350px); aspect-ratio: 1; justify-self: center; border: 1px solid var(--line-strong); border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(155,166,255,.22), rgba(14,16,24,.82) 48%, rgba(5,6,10,.94)); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 80px rgba(113,123,255,.08); cursor: grab; touch-action: none; transform: translate3d(var(--atom-x), var(--atom-y), 0); user-select: none; will-change: transform; }
+.hero-sticker:hover { border-color: var(--accent); box-shadow: inset -24px -20px 55px rgba(0,0,0,.65), 0 0 90px rgba(113,123,255,.16); }
+.hero-sticker.is-dragging { z-index: 5; cursor: grabbing; }
 .orbit { position: absolute; border: 1px solid var(--line-strong); border-radius: 50%; }
 .orbit-one { inset: 12%; }
 .orbit-two { inset: 29% -13%; transform: rotate(58deg); }
