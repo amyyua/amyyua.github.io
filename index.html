@@ -30,10 +30,10 @@
         Amy
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="https://github.com/amyyua" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <nav class="top-links" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/amyyua/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/amyyua" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="email-link" href="mailto:amyylqh@gmail.com">Email <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
@@ -73,76 +73,59 @@
           <h2 id="work-title">A few things I’ve<br /><em>made happen.</em></h2>
         </div>
 
-        <article class="project project-puppy" data-reveal>
-          <div class="project-visual" aria-label="Illustrated preview of the Happy Puppy application">
-            <div class="mock-browser puppy-ui">
-              <div class="browser-bar"><i></i><i></i><i></i><span>happy puppy</span></div>
-              <div class="puppy-header">
-                <div class="dog-mark" aria-hidden="true">◖ᴥ◗</div>
-                <strong>Find food your dog<br />will feel good about.</strong>
-              </div>
-              <div class="profile-chip"><span>🐕</span> Coco · Adult · Sensitive stomach</div>
-              <div class="product-row">
-                <div><span class="food-bag">GOOD<br />DOG</span><b>Chicken &amp; Rice</b><small>Great match</small></div>
-                <div><span class="food-bag food-bag-alt">WILD<br />BOWL</span><b>Lamb recipe</b><small>Compare</small></div>
+        <div class="project-grid">
+          <article class="project project-puppy" data-reveal>
+            <div class="project-preview puppy-preview" aria-hidden="true">
+              <div class="preview-window">
+                <span class="preview-dog">◖ᴥ◗</span>
+                <div><small>HAPPY PUPPY</small><strong>Better food choices,<br />happier dogs.</strong></div>
+                <span class="preview-pill">AI analysis ✦</span>
               </div>
             </div>
-            <span class="visual-note">LOCAL-FIRST + AI</span>
-          </div>
-
-          <div class="project-copy">
-            <p class="project-number">01 / FULL-STACK + AI</p>
-            <h3>Happy Puppy</h3>
-            <p class="project-lead">Making dog-food labels easier for Australian pet owners to understand.</p>
-            <p>
-              A local-first product that imports dry food, translates ingredient labels into clear
-              insights, flags profile-specific cautions, and compares products side by side. Its
-              LangGraph workflow supports OpenAI, Ollama, or a deterministic offline fallback.
-            </p>
-            <ul class="tech-list" aria-label="Happy Puppy technologies">
-              <li>React</li><li>TypeScript</li><li>FastAPI</li><li>LangGraph</li><li>SQLite</li>
-            </ul>
-            <a class="project-link" href="https://github.com/amyyua/happy-puppy" target="_blank" rel="noreferrer">
-              View the repository <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="project project-data" data-reveal>
-          <div class="project-visual" aria-label="Illustrated preview of the ABS Labour Force analytics project">
-            <div class="mock-browser data-ui">
-              <div class="browser-bar"><i></i><i></i><i></i><span>labour market / monthly</span></div>
-              <div class="data-title"><span>AU</span><strong>Labour market<br />at a glance</strong></div>
-              <div class="stat-row">
-                <div><small>EMPLOYMENT</small><b>14.6M</b><em>↗ monthly</em></div>
-                <div><small>UNEMPLOYMENT</small><b>4.1%</b><em>tested data</em></div>
-              </div>
-              <svg class="data-chart" viewBox="0 0 480 130" role="img" aria-label="Illustrative rising line chart">
-                <path class="chart-grid" d="M0 25H480M0 65H480M0 105H480" />
-                <path class="chart-line" d="M4 106 C50 98,72 72,112 86 S180 107,216 65 S277 36,322 55 S396 73,476 18" />
-                <circle cx="476" cy="18" r="6" />
-              </svg>
+            <div class="project-copy">
+              <p class="project-number">01 / FULL-STACK + AI</p>
+              <h3>Happy Puppy</h3>
+              <p class="project-lead">Making dog-food labels easier for Australian pet owners to understand.</p>
+              <p>
+                A local-first React and FastAPI product that turns ingredient labels into clear insights,
+                profile-specific cautions, and side-by-side comparisons.
+              </p>
+              <ul class="tech-list" aria-label="Happy Puppy technologies">
+                <li>React</li><li>FastAPI</li><li>LangGraph</li><li>SQLite</li>
+              </ul>
+              <a class="project-link" href="https://github.com/amyyua/happy-puppy" target="_blank" rel="noreferrer">
+                View project <span aria-hidden="true">↗</span>
+              </a>
             </div>
-            <span class="visual-note">PUBLIC DATA → USEFUL MODELS</span>
-          </div>
+          </article>
 
-          <div class="project-copy">
-            <p class="project-number">02 / DATA ENGINEERING</p>
-            <h3>ABS Labour Force</h3>
-            <p class="project-lead">Turning semi-structured public spreadsheets into trusted analytics.</p>
-            <p>
-              A reproducible pipeline that ingests Australian Bureau of Statistics workbooks into
-              DuckDB, standardises them with dbt, and builds tested marts for employment growth,
-              unemployment trends, and monthly labour-market reporting.
-            </p>
-            <ul class="tech-list" aria-label="ABS Labour Force technologies">
-              <li>Python</li><li>dbt</li><li>DuckDB</li><li>SQL</li><li>GitHub Actions</li>
-            </ul>
-            <a class="project-link" href="https://github.com/amyyua/abs-labour-force-dbt" target="_blank" rel="noreferrer">
-              View the repository <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
+          <article class="project project-data" data-reveal>
+            <div class="project-preview data-preview" aria-hidden="true">
+              <div class="preview-window">
+                <div class="preview-stats"><span><small>EMPLOYMENT</small><b>14.6M</b></span><span><small>DATA QUALITY</small><b>✓</b></span></div>
+                <svg viewBox="0 0 400 90">
+                  <path class="preview-grid-line" d="M0 24H400M0 54H400M0 84H400" />
+                  <path class="preview-chart-line" d="M2 80 C40 71,58 48,96 61 S154 78,186 48 S244 23,280 37 S344 51,398 8" />
+                </svg>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-number">02 / DATA ENGINEERING</p>
+              <h3>ABS Labour Force</h3>
+              <p class="project-lead">Turning semi-structured public spreadsheets into trusted analytics.</p>
+              <p>
+                A reproducible Python, DuckDB, and dbt pipeline that builds tested marts for employment
+                growth, unemployment trends, and monthly reporting.
+              </p>
+              <ul class="tech-list" aria-label="ABS Labour Force technologies">
+                <li>Python</li><li>dbt</li><li>DuckDB</li><li>GitHub Actions</li>
+              </ul>
+              <a class="project-link" href="https://github.com/amyyua/abs-labour-force-dbt" target="_blank" rel="noreferrer">
+                View project <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
 
         <a class="all-work-link" href="https://github.com/amyyua?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
           Explore all my code on GitHub <span aria-hidden="true">↗</span>
@@ -171,9 +154,9 @@
         <div data-reveal>
           <p class="eyebrow">Let’s connect</p>
           <h2 id="contact-title">Got a problem worth<br /><em>solving?</em></h2>
-          <p>Take a look at my code, follow what I’m building, or start a conversation on GitHub.</p>
-          <a class="button button-dark" href="https://github.com/amyyua" target="_blank" rel="noreferrer">
-            Find me on GitHub <span aria-hidden="true">↗</span>
+          <p>I’m open to thoughtful engineering opportunities and interesting problems. Send me a note.</p>
+          <a class="button button-dark" href="mailto:amyylqh@gmail.com">
+            Email me <span aria-hidden="true">↗</span>
           </a>
         </div>
         <span class="contact-scribble" aria-hidden="true">↝</span>
