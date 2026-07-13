@@ -3,77 +3,92 @@ const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const spaceCanvas = document.querySelector('[data-space]');
-const spaceContext = spaceCanvas?.getContext('2d');
-let stars = [];
+const codeCanvas = document.querySelector('[data-code-rain]');
+const codeContext = codeCanvas?.getContext('2d');
+const codeSnippets = [
+  'const app = {}',
+  'await build()',
+  'data.map(fn)',
+  '</hello>',
+  'if (ready) {}',
+  'SELECT *',
+  'def create():',
+  '{ cute: true }',
+  'git push',
+  '=> ship()',
+  '[0, 1, 2]',
+  'console.log("hi")',
+];
+let codeBlocks = [];
 let animationFrame;
 
-const createStars = () => {
-  if (!spaceCanvas || !spaceContext) return;
+const createCodeRain = () => {
+  if (!codeCanvas || !codeContext) return;
 
   const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
   const width = window.innerWidth;
   const height = window.innerHeight;
-  spaceCanvas.width = width * pixelRatio;
-  spaceCanvas.height = height * pixelRatio;
-  spaceCanvas.style.width = `${width}px`;
-  spaceCanvas.style.height = `${height}px`;
-  spaceContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  codeCanvas.width = width * pixelRatio;
+  codeCanvas.height = height * pixelRatio;
+  codeCanvas.style.width = `${width}px`;
+  codeCanvas.style.height = `${height}px`;
+  codeContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-  const starCount = Math.min(150, Math.max(60, Math.floor((width * height) / 9000)));
-  stars = Array.from({ length: starCount }, (_, index) => ({
+  const blockCount = Math.min(34, Math.max(16, Math.floor(width / 42)));
+  codeBlocks = Array.from({ length: blockCount }, (_, index) => ({
+    text: codeSnippets[index % codeSnippets.length],
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 1.2 + 0.25,
-    opacity: Math.random() * 0.55 + 0.15,
-    speed: Math.random() * 0.08 + 0.015,
-    phase: index * 0.7,
+    size: Math.random() * 3 + 10,
+    opacity: Math.random() * .09 + .045,
+    speed: Math.random() * .32 + .16,
+    tone: index % 3,
   }));
 };
 
-const drawSpace = (time = 0) => {
-  if (!spaceCanvas || !spaceContext) return;
+const drawCodeRain = () => {
+  if (!codeCanvas || !codeContext) return;
 
   const width = window.innerWidth;
   const height = window.innerHeight;
-  spaceContext.clearRect(0, 0, width, height);
+  codeContext.clearRect(0, 0, width, height);
 
-  const glow = spaceContext.createRadialGradient(width * 0.78, height * 0.16, 0, width * 0.78, height * 0.16, width * 0.55);
-  glow.addColorStop(0, 'rgba(113, 123, 255, 0.10)');
-  glow.addColorStop(1, 'rgba(5, 6, 10, 0)');
-  spaceContext.fillStyle = glow;
-  spaceContext.fillRect(0, 0, width, height);
-
-  stars.forEach((star) => {
-    const twinkle = reducedMotion ? 1 : 0.72 + Math.sin(time * 0.001 + star.phase) * 0.28;
-    spaceContext.beginPath();
-    spaceContext.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    spaceContext.fillStyle = `rgba(225, 229, 255, ${star.opacity * twinkle})`;
-    spaceContext.fill();
+  codeBlocks.forEach((block) => {
+    codeContext.font = `500 ${block.size}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    const textWidth = codeContext.measureText(block.text).width;
+    const colors = [
+      `rgba(255, 143, 199, ${block.opacity})`,
+      `rgba(129, 230, 199, ${block.opacity})`,
+      `rgba(194, 181, 255, ${block.opacity})`,
+    ];
+    codeContext.fillStyle = `rgba(255, 255, 255, ${block.opacity * .16})`;
+    codeContext.fillRect(block.x - 7, block.y - block.size - 5, textWidth + 14, block.size + 12);
+    codeContext.fillStyle = colors[block.tone];
+    codeContext.fillText(block.text, block.x, block.y);
 
     if (!reducedMotion) {
-      star.y -= star.speed;
-      if (star.y < -2) {
-        star.y = height + 2;
-        star.x = Math.random() * width;
+      block.y += block.speed;
+      if (block.y > height + 30) {
+        block.y = -30 - Math.random() * height * .3;
+        block.x = Math.random() * Math.max(1, width - textWidth);
       }
     }
   });
 
-  if (!reducedMotion) animationFrame = window.requestAnimationFrame(drawSpace);
+  if (!reducedMotion) animationFrame = window.requestAnimationFrame(drawCodeRain);
 };
 
-if (spaceCanvas && spaceContext) {
-  createStars();
-  drawSpace();
+if (codeCanvas && codeContext) {
+  createCodeRain();
+  drawCodeRain();
   window.addEventListener('resize', () => {
     window.cancelAnimationFrame(animationFrame);
-    createStars();
-    drawSpace();
+    createCodeRain();
+    drawCodeRain();
   });
   document.addEventListener('visibilitychange', () => {
     window.cancelAnimationFrame(animationFrame);
-    if (!document.hidden && !reducedMotion) drawSpace();
+    if (!document.hidden && !reducedMotion) drawCodeRain();
   });
 }
 
