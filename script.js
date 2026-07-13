@@ -77,50 +77,6 @@ if (spaceCanvas && spaceContext) {
   });
 }
 
-const atom = document.querySelector('.hero-sticker');
-const atomPosition = { x: 0, y: 0 };
-let atomDrag;
-
-const moveAtom = (x, y) => {
-  atomPosition.x = x;
-  atomPosition.y = y;
-  atom?.style.setProperty('--atom-x', `${x}px`);
-  atom?.style.setProperty('--atom-y', `${y}px`);
-};
-
-atom?.addEventListener('pointerdown', (event) => {
-  if (event.button !== 0) return;
-
-  atomDrag = {
-    pointerId: event.pointerId,
-    startX: event.clientX,
-    startY: event.clientY,
-    originX: atomPosition.x,
-    originY: atomPosition.y,
-  };
-  atom.setPointerCapture(event.pointerId);
-  atom.classList.add('is-dragging');
-});
-
-atom?.addEventListener('pointermove', (event) => {
-  if (!atomDrag || event.pointerId !== atomDrag.pointerId) return;
-
-  moveAtom(
-    atomDrag.originX + event.clientX - atomDrag.startX,
-    atomDrag.originY + event.clientY - atomDrag.startY
-  );
-});
-
-const stopAtomDrag = (event) => {
-  if (!atomDrag || event.pointerId !== atomDrag.pointerId) return;
-  atom.classList.remove('is-dragging');
-  atomDrag = undefined;
-};
-
-atom?.addEventListener('pointerup', stopAtomDrag);
-atom?.addEventListener('pointercancel', stopAtomDrag);
-atom?.addEventListener('dblclick', () => moveAtom(0, 0));
-
 const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
