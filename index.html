@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Amy is a full-stack developer, AI engineer, and data engineer building thoughtful digital products and intelligent systems."
+      content="Amy is a full-stack developer, AI engineer, and data engineer building useful products from interface to infrastructure."
     />
-    <meta name="theme-color" content="#0b0c0e" />
-    <meta property="og:title" content="Amy — Developer &amp; Engineer" />
+    <meta name="theme-color" content="#f6f2e9" />
+    <meta property="og:title" content="Amy — Full-stack, AI &amp; Data Engineer" />
     <meta
       property="og:description"
-      content="Full-stack development, applied AI, and dependable data engineering."
+      content="Useful products, practical AI, and dependable data systems."
     />
     <meta property="og:type" content="website" />
-    <title>Amy — Full-stack Developer, AI &amp; Data Engineer</title>
+    <title>Amy — Full-stack, AI &amp; Data Engineer</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" href="styles.css" />
@@ -26,221 +26,164 @@
 
     <header class="site-header" data-header>
       <a class="wordmark" href="#top" aria-label="Amy, home">
-        <span class="wordmark-mark" aria-hidden="true">A</span>
-        <span>Amy</span>
+        <span class="wordmark-dot" aria-hidden="true"></span>
+        Amy
       </a>
 
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Toggle navigation</span>
-        <span></span><span></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
+      <nav aria-label="Main navigation">
         <a href="#work">Work</a>
-        <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+        <a href="#about">About</a>
+        <a href="https://github.com/amyyua" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero section" id="top" aria-labelledby="hero-title">
+      <section class="hero" id="top">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Developer · Engineer · Builder</p>
-          <h1 id="hero-title">
-            I build systems that are
-            <span class="accent-text">useful by design.</span>
-          </h1>
+          <p class="eyebrow">Hello, I’m Amy <span aria-hidden="true">✦</span></p>
+          <h1>I make complex things feel <em>simple.</em></h1>
           <p class="hero-intro">
-            I’m Amy—a full-stack developer, AI engineer, and data engineer turning complex ideas into
-            reliable products, intelligent experiences, and data that works harder.
+            Full-stack developer, AI engineer, and data engineer. I build useful products from the
+            interface all the way down to the data.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="https://github.com/amyyua" target="_blank" rel="noreferrer">
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <a class="button" href="#work">See what I’ve built <span aria-hidden="true">↓</span></a>
         </div>
 
-        <div class="hero-visual" role="img" aria-label="A visual representation of connected software, AI, and data systems" data-reveal>
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="system-card card-code">
-            <div class="card-bar"><i></i><i></i><i></i></div>
-            <code><span>const</span> idea = <b>await</b> build();</code>
-          </div>
-          <div class="system-card card-model">
-            <span class="card-label">MODEL / 01</span>
-            <div class="model-bars"><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-          <div class="system-card card-data">
-            <span class="card-label">DATA FLOW</span>
-            <svg viewBox="0 0 190 65" role="img" aria-label="Rising data graph">
-              <path d="M4 53 C28 50, 35 24, 58 36 S91 60, 111 31 S146 9, 186 14" />
-              <circle cx="186" cy="14" r="4" />
-            </svg>
-          </div>
-          <p class="visual-caption">Full stack <span>×</span> AI <span>×</span> Data</p>
+        <div class="hero-sticker" aria-hidden="true" data-reveal>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="sticker-code">&lt;/&gt;</span>
+          <span class="sticker-label">BUILD<br />LEARN<br />REPEAT</span>
+          <span class="spark spark-one">✦</span>
+          <span class="spark spark-two">✦</span>
+        </div>
+
+        <div class="role-strip" aria-label="Areas of expertise">
+          <span>Full-stack development</span>
+          <i aria-hidden="true">✦</i>
+          <span>Applied AI</span>
+          <i aria-hidden="true">✦</i>
+          <span>Data engineering</span>
         </div>
       </section>
 
-      <section class="about section section-grid" id="about" aria-labelledby="about-title">
-        <div class="section-kicker" data-reveal>
-          <span>01</span>
-          <p>About</p>
-        </div>
-        <div class="about-content" data-reveal>
-          <h2 id="about-title">Across the stack.<br />Focused on the outcome.</h2>
-          <div class="about-body">
-            <p>
-              I work where product thinking meets engineering: shaping intuitive interfaces, robust
-              services, practical AI, and trustworthy data foundations.
-            </p>
-            <p>
-              My multidisciplinary perspective helps me see the whole system—not just the next ticket.
-              The result is technology that is maintainable, explainable, and genuinely valuable to the
-              people using it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="expertise section" id="expertise" aria-labelledby="expertise-title">
+      <section class="work section" id="work" aria-labelledby="work-title">
         <div class="section-heading" data-reveal>
-          <div class="section-kicker"><span>02</span><p>Expertise</p></div>
-          <h2 id="expertise-title">Three disciplines.<br />One connected practice.</h2>
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">A few things I’ve<br /><em>made happen.</em></h2>
         </div>
 
-        <div class="expertise-list">
-          <article class="expertise-card" data-reveal>
-            <div class="expertise-number">01</div>
-            <div>
-              <p class="expertise-type">Product engineering</p>
-              <h3>Full-stack<br />development</h3>
+        <article class="project project-puppy" data-reveal>
+          <div class="project-visual" aria-label="Illustrated preview of the Happy Puppy application">
+            <div class="mock-browser puppy-ui">
+              <div class="browser-bar"><i></i><i></i><i></i><span>happy puppy</span></div>
+              <div class="puppy-header">
+                <div class="dog-mark" aria-hidden="true">◖ᴥ◗</div>
+                <strong>Find food your dog<br />will feel good about.</strong>
+              </div>
+              <div class="profile-chip"><span>🐕</span> Coco · Adult · Sensitive stomach</div>
+              <div class="product-row">
+                <div><span class="food-bag">GOOD<br />DOG</span><b>Chicken &amp; Rice</b><small>Great match</small></div>
+                <div><span class="food-bag food-bag-alt">WILD<br />BOWL</span><b>Lamb recipe</b><small>Compare</small></div>
+              </div>
             </div>
-            <p class="expertise-description">
-              End-to-end web products built around clear user needs, durable architecture, and a polished
-              experience across every screen.
-            </p>
-            <ul class="tag-list" aria-label="Full-stack skills">
-              <li>Frontend</li><li>APIs</li><li>Backend</li><li>Cloud</li>
-            </ul>
-          </article>
+            <span class="visual-note">LOCAL-FIRST + AI</span>
+          </div>
 
-          <article class="expertise-card" data-reveal>
-            <div class="expertise-number">02</div>
-            <div>
-              <p class="expertise-type">Applied intelligence</p>
-              <h3>AI<br />engineering</h3>
-            </div>
-            <p class="expertise-description">
-              Intelligent features and workflows that put modern models to useful work—with evaluation,
-              guardrails, and human experience in the loop.
-            </p>
-            <ul class="tag-list" aria-label="AI engineering skills">
-              <li>LLM apps</li><li>RAG</li><li>Evaluation</li><li>Automation</li>
-            </ul>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <div class="expertise-number">03</div>
-            <div>
-              <p class="expertise-type">Data foundations</p>
-              <h3>Data<br />engineering</h3>
-            </div>
-            <p class="expertise-description">
-              Reliable pipelines and useful data models that transform scattered information into
-              trustworthy inputs for analytics, products, and AI.
-            </p>
-            <ul class="tag-list" aria-label="Data engineering skills">
-              <li>Pipelines</li><li>Modelling</li><li>Analytics</li><li>Quality</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="work section section-grid" id="work" aria-labelledby="work-title">
-        <div class="section-kicker" data-reveal>
-          <span>03</span>
-          <p>Selected work</p>
-        </div>
-        <div class="work-content">
-          <div class="work-intro" data-reveal>
-            <h2 id="work-title">The shape of<br />my work.</h2>
+          <div class="project-copy">
+            <p class="project-number">01 / FULL-STACK + AI</p>
+            <h3>Happy Puppy</h3>
+            <p class="project-lead">Making dog-food labels easier for Australian pet owners to understand.</p>
             <p>
-              Real project case studies are coming next. For now, explore the kinds of problems I solve—or
-              browse my public code on GitHub.
+              A local-first product that imports dry food, translates ingredient labels into clear
+              insights, flags profile-specific cautions, and compares products side by side. Its
+              LangGraph workflow supports OpenAI, Ollama, or a deterministic offline fallback.
             </p>
-          </div>
-
-          <div class="work-grid">
-            <a class="work-card work-card-featured" href="https://github.com/amyyua?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
-              <span class="work-index">A / PRODUCT</span>
-              <div class="work-icon" aria-hidden="true">⌁</div>
-              <div>
-                <h3>Full-stack systems</h3>
-                <p>From a rough problem to a complete, production-minded digital product.</p>
-              </div>
-              <span class="work-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="work-card" href="https://github.com/amyyua?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
-              <span class="work-index">B / INTELLIGENCE</span>
-              <div class="work-icon" aria-hidden="true">✦</div>
-              <div>
-                <h3>Applied AI</h3>
-                <p>Model-powered tools designed for a measurable job, not a technology demo.</p>
-              </div>
-              <span class="work-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="work-card" href="https://github.com/amyyua?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
-              <span class="work-index">C / FOUNDATIONS</span>
-              <div class="work-icon" aria-hidden="true">⌗</div>
-              <div>
-                <h3>Data platforms</h3>
-                <p>Clean, observable data flows that teams and intelligent systems can depend on.</p>
-              </div>
-              <span class="work-arrow" aria-hidden="true">↗</span>
+            <ul class="tech-list" aria-label="Happy Puppy technologies">
+              <li>React</li><li>TypeScript</li><li>FastAPI</li><li>LangGraph</li><li>SQLite</li>
+            </ul>
+            <a class="project-link" href="https://github.com/amyyua/happy-puppy" target="_blank" rel="noreferrer">
+              View the repository <span aria-hidden="true">↗</span>
             </a>
           </div>
-        </div>
+        </article>
+
+        <article class="project project-data" data-reveal>
+          <div class="project-visual" aria-label="Illustrated preview of the ABS Labour Force analytics project">
+            <div class="mock-browser data-ui">
+              <div class="browser-bar"><i></i><i></i><i></i><span>labour market / monthly</span></div>
+              <div class="data-title"><span>AU</span><strong>Labour market<br />at a glance</strong></div>
+              <div class="stat-row">
+                <div><small>EMPLOYMENT</small><b>14.6M</b><em>↗ monthly</em></div>
+                <div><small>UNEMPLOYMENT</small><b>4.1%</b><em>tested data</em></div>
+              </div>
+              <svg class="data-chart" viewBox="0 0 480 130" role="img" aria-label="Illustrative rising line chart">
+                <path class="chart-grid" d="M0 25H480M0 65H480M0 105H480" />
+                <path class="chart-line" d="M4 106 C50 98,72 72,112 86 S180 107,216 65 S277 36,322 55 S396 73,476 18" />
+                <circle cx="476" cy="18" r="6" />
+              </svg>
+            </div>
+            <span class="visual-note">PUBLIC DATA → USEFUL MODELS</span>
+          </div>
+
+          <div class="project-copy">
+            <p class="project-number">02 / DATA ENGINEERING</p>
+            <h3>ABS Labour Force</h3>
+            <p class="project-lead">Turning semi-structured public spreadsheets into trusted analytics.</p>
+            <p>
+              A reproducible pipeline that ingests Australian Bureau of Statistics workbooks into
+              DuckDB, standardises them with dbt, and builds tested marts for employment growth,
+              unemployment trends, and monthly labour-market reporting.
+            </p>
+            <ul class="tech-list" aria-label="ABS Labour Force technologies">
+              <li>Python</li><li>dbt</li><li>DuckDB</li><li>SQL</li><li>GitHub Actions</li>
+            </ul>
+            <a class="project-link" href="https://github.com/amyyua/abs-labour-force-dbt" target="_blank" rel="noreferrer">
+              View the repository <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <a class="all-work-link" href="https://github.com/amyyua?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
+          Explore all my code on GitHub <span aria-hidden="true">↗</span>
+        </a>
       </section>
 
-      <section class="principles section" aria-labelledby="principles-title">
-        <div class="section-heading" data-reveal>
-          <div class="section-kicker"><span>04</span><p>How I work</p></div>
-          <h2 id="principles-title">Built with intention.</h2>
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="about-intro" data-reveal>
+          <p class="eyebrow">What I bring</p>
+          <h2 id="about-title">I think in<br /><em>whole systems.</em></h2>
         </div>
-        <ol class="principles-list">
-          <li data-reveal><span>01</span><h3>Understand the real problem</h3><p>Start with users, constraints, and the decision the work needs to improve.</p></li>
-          <li data-reveal><span>02</span><h3>Make complexity legible</h3><p>Turn ambiguity into clear architecture, sensible interfaces, and small testable steps.</p></li>
-          <li data-reveal><span>03</span><h3>Ship, learn, improve</h3><p>Deliver useful increments, observe what happens, and refine with evidence.</p></li>
-        </ol>
-      </section>
-
-      <section class="contact section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-inner" data-reveal>
-          <p class="eyebrow">Have an interesting problem?</p>
-          <h2 id="contact-title">Let’s build something<br /><span class="accent-text">worth using.</span></h2>
+        <div class="about-copy" data-reveal>
           <p>
-            I’m always interested in thoughtful products, ambitious data problems, and practical ways to
-            apply AI.
+            I like working where product, engineering, AI, and data overlap. It means I can follow an
+            idea from the user experience through the APIs and pipelines that make it reliable.
           </p>
-          <a class="button button-light" href="https://github.com/amyyua" target="_blank" rel="noreferrer">
-            Connect on GitHub <span aria-hidden="true">↗</span>
+          <div class="skill-columns">
+            <div><span>01</span><h3>Product-minded</h3><p>Useful beats impressive. I start with the real job the product needs to do.</p></div>
+            <div><span>02</span><h3>End-to-end</h3><p>I’m comfortable moving between interfaces, backend systems, models, and data.</p></div>
+            <div><span>03</span><h3>Always learning</h3><p>I enjoy making new technology practical, testable, and understandable.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" aria-labelledby="contact-title">
+        <div data-reveal>
+          <p class="eyebrow">Let’s connect</p>
+          <h2 id="contact-title">Got a problem worth<br /><em>solving?</em></h2>
+          <p>Take a look at my code, follow what I’m building, or start a conversation on GitHub.</p>
+          <a class="button button-dark" href="https://github.com/amyyua" target="_blank" rel="noreferrer">
+            Find me on GitHub <span aria-hidden="true">↗</span>
           </a>
         </div>
+        <span class="contact-scribble" aria-hidden="true">↝</span>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="wordmark"><span class="wordmark-mark" aria-hidden="true">A</span><span>Amy</span></div>
-      <p>Full-stack developer · AI engineer · Data engineer</p>
-      <div class="footer-meta">
-        <a href="https://github.com/amyyua" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <button class="back-to-top" type="button">Back to top ↑</button>
-      </div>
-      <p class="copyright">© <span data-year></span> Amy. Built with care and plain HTML.</p>
+      <a class="wordmark" href="#top"><span class="wordmark-dot" aria-hidden="true"></span>Amy</a>
+      <p>Full-stack · AI · Data</p>
+      <p>© <span data-year></span> Amy</p>
     </footer>
   </body>
 </html>
