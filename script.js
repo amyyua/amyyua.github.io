@@ -13,7 +13,7 @@ const codeSnippets = [
   'if (ready) {}',
   'SELECT *',
   'def create():',
-  '{ cute: true }',
+  '{ useful: true }',
   'git push',
   '=> ship()',
   '[0, 1, 2]',
@@ -57,7 +57,7 @@ const drawCodeRain = () => {
     codeContext.font = `500 ${block.size}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     const textWidth = codeContext.measureText(block.text).width;
     const colors = [
-      `rgba(255, 143, 199, ${block.opacity})`,
+      `rgba(196, 167, 255, ${block.opacity})`,
       `rgba(129, 230, 199, ${block.opacity})`,
       `rgba(194, 181, 255, ${block.opacity})`,
     ];
